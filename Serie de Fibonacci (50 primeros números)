@@ -1,0 +1,83 @@
+<?php
+
+// Creamos un arreglo inicial con los dos primeros números de la serie
+$fibonacci = [0, 1];
+
+// Calculamos del tercer elemento (índice 2) hasta el 49 (total 50 números)
+for ($i = 2; $i < 50; $i++) {
+    // Cada número es la suma de los dos anteriores
+    $fibonacci[$i] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
+}
+
+// Imprimimos la serie con sus índices
+foreach ($fibonacci as $index => $value) {
+    echo "$index: $value\n";
+}
+
+
+
+python
+# Lista inicial con los dos primeros números de la sucesión
+fibonacci = [0, 1]
+
+# Calculamos del índice 2 al 49 (total 50 números)
+for i in range(2, 50):
+    # Cada nuevo número es la suma de los dos anteriores
+    fibonacci.append(fibonacci[i - 1] + fibonacci[i - 2])
+
+# Recorremos la lista e imprimimos índice y valor
+for index, value in enumerate(fibonacci):
+    print(f"{index}: {value}")
+
+
+
+JS
+// Arreglo inicial con los dos primeros números de Fibonacci
+const fibonacci = [0, 1];
+
+// Calculamos del índice 2 al 49 (total 50 números)
+for (let i = 2; i < 50; i++) {
+    // Cada número es la suma de los dos anteriores
+    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+}
+
+// Recorremos e imprimimos cada número con su índice
+fibonacci.forEach((value, index) => {
+    console.log(`${index}: ${value}`);
+});
+
+✔️ Guarda como fibonacci.js y ejecuta con: node fibonacci.js
+
+
+
+HTML + JS
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci en JavaScript</title>
+</head>
+<body>
+  <h1>Serie de Fibonacci (50 primeros números)</h1>
+  <pre id="output"></pre>
+
+  <script>
+    // Iniciamos el arreglo con los dos primeros números
+    const fibonacci = [0, 1];
+
+    // Calculamos los siguientes 48 números (hasta completar 50)
+    for (let i = 2; i < 50; i++) {
+      fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+
+    // Mostramos la salida en el elemento <pre>
+    const output = document.getElementById('output');
+    output.textContent = fibonacci
+      .map((val, idx) => `${idx}: ${val}`) // formateamos con índice y valor
+      .join('\n'); // unimos con saltos de línea
+  </script>
+</body>
+</html>
+
+
+
